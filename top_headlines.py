@@ -1,4 +1,4 @@
-from hw11_secrets import api_key
+from secrets import api_key
 import requests
 import datetime
 
@@ -39,7 +39,7 @@ def get_headlines(name):
     else:
     	greet = "night"
 
-    return render_template('list.html', name=name, greet=greet, my_list=articles_lst)
+    return render_template('user.html', name=name, greet=greet, my_list=articles_lst)
 
 # page for user name and section name
 @app.route('/user/<name>/<section>')
@@ -70,7 +70,7 @@ def get_headlines_section(name, section):
     else:
     	greet = "night"
 
-    return render_template('list2.html', name=name, section=section, my_list=articles_lst, greet = greet)
+    return render_template('user2.html', name=name, section=section, my_list=articles_lst, greet=greet)
 
 
 if __name__ == '__main__':  
